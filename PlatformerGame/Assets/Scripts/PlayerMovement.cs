@@ -29,7 +29,6 @@ public class PlayerMovement : MonoBehaviour
      }
 
      if (Input.GetButtonDown("Fire1")) {
-
          StartCoroutine(attackWait());
      }
 
@@ -52,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator attackWait() {
         attack1 = true;
         animator.SetBool("isAttack1", true);
+        GetComponent<AudioSource>().Play();
 
         runSpeed = 0f;
          

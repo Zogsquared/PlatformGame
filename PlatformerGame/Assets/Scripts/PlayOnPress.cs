@@ -11,16 +11,18 @@ public class PlayOnPress : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AudioListener.pause = true;
+        //AudioListener.pause = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Vertical") && Input.GetAxis("Vertical") < 0) {
-            AudioListener.pause = false;
+            GetComponent<AudioSource>().Play();
+            //AudioListener.pause = false;
         } else if (Input.GetButtonUp("Vertical")) {
-            AudioListener.pause = true;
+            GetComponent<AudioSource>().Stop();
+            //AudioListener.pause = true;
         }
     }
 }

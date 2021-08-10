@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 429920691}
   - component: {fileID: 429920690}
   - component: {fileID: 429920689}
+  - component: {fileID: 429920692}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -206,6 +207,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &429920692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429920688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b923eacd292b0342888e7fd93626d1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 663166573}
 --- !u!1 &598093994
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +281,7 @@ GameObject:
   - component: {fileID: 663166579}
   - component: {fileID: 663166581}
   - component: {fileID: 663166582}
+  - component: {fileID: 663166583}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -357,6 +372,7 @@ Transform:
   m_Children:
   - {fileID: 1853180625}
   - {fileID: 1159372534}
+  - {fileID: 1988761991}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -490,7 +506,21 @@ MonoBehaviour:
   controller: {fileID: 663166578}
   animator: {fileID: 663166574}
   runSpeed: 25
---- !u!82 &663166582
+--- !u!114 &663166582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663166573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b6b65e1cfe2eaa4ca328c6e5171e5b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firepoint: {fileID: 1988761991}
+  bulletPrefab: {fileID: 7700432199264541912, guid: 4f1b95f207a76d0459893c82bbbfd2a9, type: 3}
+--- !u!82 &663166583
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -628,7 +658,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ce06f03b63da31c4ba155672511296df, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -1842,4 +1872,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 663166576}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1988761990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1988761991}
+  m_Layer: 3
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1988761991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988761990}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.151, y: -0.038, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 663166576}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

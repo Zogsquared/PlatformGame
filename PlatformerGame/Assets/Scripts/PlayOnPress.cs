@@ -7,6 +7,7 @@ public class PlayOnPress : MonoBehaviour
 
     [SerializeField]
     AudioSource crouching;
+    
     // Start is called before the first frame update
     void Start()
     {

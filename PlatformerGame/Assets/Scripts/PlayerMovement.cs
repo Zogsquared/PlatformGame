@@ -7,11 +7,13 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController2D controller;
     public Animator animator;
 
-    public float runSpeed = 40f;
+    public float runSpeed = 25f;
 
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
+    bool attack1 = false;
+
 
     // Update is called once per frame
     void Update()
@@ -24,6 +26,11 @@ public class PlayerMovement : MonoBehaviour
      if (Input.GetButtonDown("Jump")) {
          jump = true;
          animator.SetBool("isJumping", true);
+     }
+
+     if (Input.GetButtonDown("Fire1")) {
+
+         StartCoroutine(attackWait());
      }
 
      if (Input.GetButtonDown("Vertical") && Input.GetAxis("Vertical") < 0) {
@@ -41,6 +48,22 @@ public class PlayerMovement : MonoBehaviour
     public void OnCrouching (bool isCrouching) {
         animator.SetBool("isCrouching", isCrouching);
     }
+
+    IEnumerator attackWait() {
+        attack1 = true;
+        animator.SetBool("isAttack1", true);
+
+        runSpeed = 0f;
+         
+        yield return new WaitForSeconds(2.5f);
+
+        runSpeed = 25f;
+
+        attack1 = false;
+        animator.SetBool("isAttack1", false);
+    }
+
+
 
     void FixedUpdate () 
     {

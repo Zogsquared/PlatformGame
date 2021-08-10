@@ -9,11 +9,11 @@ public class PlayerMovement : MonoBehaviour
 
     public float runSpeed = 25f;
 
+
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
     bool attack1 = false;
-
 
     // Update is called once per frame
     void Update()

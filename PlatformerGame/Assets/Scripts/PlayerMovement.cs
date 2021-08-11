@@ -7,6 +7,11 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController2D controller;
     public Animator animator;
 
+    public AudioSource[] sounds;
+    public AudioSource noise1;
+    //public AudioSource noise2;
+
+
     public float runSpeed = 25f;
 
 
@@ -14,6 +19,14 @@ public class PlayerMovement : MonoBehaviour
     bool jump = false;
     bool crouch = false;
     bool attack1 = false;
+
+
+    void Start() {
+        sounds = GetComponents<AudioSource>();
+        noise1 = sounds[0];
+        //noise2 = sounds[1];
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -51,7 +64,8 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator attackWait() {
         attack1 = true;
         animator.SetBool("isAttack1", true);
-        GetComponent<AudioSource>().Play();
+        //GetComponent<AudioSource>().Play();
+        noise1.Play();
 
         runSpeed = 0f;
          

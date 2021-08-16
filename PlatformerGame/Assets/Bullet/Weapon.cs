@@ -6,6 +6,8 @@ public class Weapon : MonoBehaviour
 {
     public Transform firepoint;
     public GameObject bulletPrefab;
+    public GameObject particle;
+    public Transform particleT;
 
     // Update is called once per frame
     void Update()
@@ -26,6 +28,7 @@ public class Weapon : MonoBehaviour
          
         yield return new WaitForSeconds(1f);
         Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
+        Instantiate(particle, firepoint.position, particleT.rotation);
 
     }
 }

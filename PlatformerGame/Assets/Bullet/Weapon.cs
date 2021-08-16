@@ -29,6 +29,7 @@ public class Weapon : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
         Instantiate(particle, firepoint.position, particleT.rotation);
+        
 
     }
 }

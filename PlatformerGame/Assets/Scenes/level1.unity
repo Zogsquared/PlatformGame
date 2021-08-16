@@ -5831,6 +5831,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 1159372534}
   m_CeilingCheck: {fileID: 1853180625}
   m_CrouchDisableCollider: {fileID: 663166580}
+  particleT: {fileID: 6838251159684830589, guid: 66ce796b28741814ab68695e5602bdff, type: 3}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:

@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 public class RestartOnContact : MonoBehaviour
 {
     [SerializeField]
-    string strTag;
+    //string strTag;
 
    void OnTriggerEnter2D (Collider2D hitInfo) {
-      
+        if (hitInfo.tag == "Player") {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
       
   }
 }

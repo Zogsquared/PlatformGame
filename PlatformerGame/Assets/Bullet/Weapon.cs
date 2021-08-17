@@ -9,22 +9,30 @@ public class Weapon : MonoBehaviour
     public GameObject particle;
     public Transform particleT;
 
+    public PlayerMovement player;
+
+    public float Timer;
+    public float Cooldown;
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")) {
+        Timer -= 1 * Time.deltaTime;
+        if (Input.GetButtonDown("Fire1") && Timer <= 0) {
             Shoot();
+            StartCoroutine(player.attackWait());
+            Timer = Cooldown;
         }
     }
 
     void Shoot () {
         // shooting logic
-        StartCoroutine(attackWait());
+        StartCoroutine(attackWait1());
         
     }
 
 
-    IEnumerator attackWait() {
+    IEnumerator attackWait1() {
          
         yield return new WaitForSeconds(1f);
         Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);

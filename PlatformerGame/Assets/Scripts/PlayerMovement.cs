@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
      }
 
      if (Input.GetButtonDown("Fire1")) {
-         StartCoroutine(attackWait());
+         //StartCoroutine(attackWait());
      }
 
      if (Input.GetButtonDown("Vertical") && Input.GetAxis("Vertical") < 0) {
@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("isCrouching", isCrouching);
     }
 
-    IEnumerator attackWait() {
+    public IEnumerator attackWait() {
         attack1 = true;
         animator.SetBool("isAttack1", true);
         //GetComponent<AudioSource>().Play();

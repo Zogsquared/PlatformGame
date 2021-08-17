@@ -1428,6 +1428,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7700432199264541912, guid: 4f1b95f207a76d0459893c82bbbfd2a9, type: 3}
   particle: {fileID: 4847440150404265324, guid: 66ce796b28741814ab68695e5602bdff, type: 3}
   particleT: {fileID: 6838251159684830589, guid: 66ce796b28741814ab68695e5602bdff, type: 3}
+  player: {fileID: 943225510}
+  Timer: 0
+  Cooldown: 3
 --- !u!114 &943225510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1797,7 +1800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39088d7b7437332499c0f30143d9c014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strTag: 
 --- !u!61 &1193108030
 BoxCollider2D:
   m_ObjectHideFlags: 0

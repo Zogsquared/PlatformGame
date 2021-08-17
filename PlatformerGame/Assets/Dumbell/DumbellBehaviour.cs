@@ -24,4 +24,11 @@ public class DumbellBehaviour : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void OnTriggerEnter2D (Collider2D hitInfo) {
+        if (hitInfo.tag == "Player") {
+            Destroy(gameObject);
+        }
+      
+  }
 }

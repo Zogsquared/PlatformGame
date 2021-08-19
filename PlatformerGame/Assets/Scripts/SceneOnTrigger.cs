@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneOnTrigger : MonoBehaviour
 {
     void OnTriggerEnter2D (Collider2D hitInfo) {
-        if (GameObject.FindGameObjectWithTag("Player") == true) {
+        if (hitInfo.tag == "Player") {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
